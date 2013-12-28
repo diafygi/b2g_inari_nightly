@@ -54,7 +54,8 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
 1. Install the prerequisites.
 
     ```
-    sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib git lib32ncurses5-dev lib32z1-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip cmake libxml2-utils openjdk-7-jre openjdk-7-jdk
+    sudo dpkg --add-architecture i386
+    sudo apt-get install autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib cpp g++-4.7 gcc-4.7 gcc-multilib g++-4.7-multilib git lib32ncurses5-dev lib32z1-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip cmake libxml2-utils openjdk-7-jre openjdk-7-jdk libdbus-glib-1-2 libxt-dev patch
     ```
 
 2. Clone the night builder files from github.
@@ -72,7 +73,7 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
 4. Unzip the backup (needed for drivers) int the B2G folder.
 
     ```
-    unzip backup-inari.zip -d ~/B2G
+    unzip ~/b2g_inari_nightly/backup-inari.zip -d ~/B2G
     ```
 
 5. Create the builds folder.
@@ -90,7 +91,7 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
 7. Add a location to your web server to serve the files (I used nginx).
 
     ```
-    location /b2g_inari_builds {
+    location /b2g_inari_nightly_builds {
         alias /path/to/builds/;
         autoindex on;
     }
