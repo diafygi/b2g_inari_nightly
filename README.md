@@ -118,6 +118,8 @@ I am subscribed to the dev-b2g mailing list, so you can post questions about ins
 
 https://lists.mozilla.org/listinfo/dev-b2g
 
-If there are bugs with the builds after you install them, please submit bug reports to the main mozilla bug tracker, and please include the branch (master, v1.2, v1.3) and commit hash (from the filename)
+If there are bugs with the builds after you install them, please submit bug reports to the main mozilla bug tracker, and please include the branch (master, v1.2, v1.3) and commit hash (from the filename):
+
+https://bugzilla.mozilla.org/
 
 
