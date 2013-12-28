@@ -24,77 +24,77 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
 
 4. Configure [udev rules](https://developer.mozilla.org/en-US/Firefox_OS/Firefox_OS_build_prerequisites#For_Linux.3A_configure_the_udev_rule_for_your_phone) for your device (Linux only, I had to have two lines, one for adb, one for fastboot).
 
-```
-SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0666", GROUP="plugdev" # ZTE Open
-SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev" # Google device
-```
+    ```
+    SUBSYSTEM=="usb", ATTR{idVendor}=="19d2", MODE="0666", GROUP="plugdev" # ZTE Open
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev" # Google device
+    ```
 
 5. Plug in your phone and make sure it is recognized on adb.
 
-```
-adb devices
-```
+    ```
+    adb devices
+    ```
 
 6. Download one of the latest builds from https://daylightpirates.org/b2g_inari_builds/ (the three nightly build versions are master, v1.2, and v1.3).
 
 7. Extract all the files to a b2g_inari directory.
 
-```
-tar -zxvf b2g_inari_<version>_<date>_<commit>.tar.gz
-```
+    ```
+    tar -zxvf b2g_inari_<version>_<date>_<commit>.tar.gz
+    ```
 
 8. Run the flash script in the extracted directory.
 
-```
-./flash.sh
-```
+    ```
+    ./flash.sh
+    ```
 
 ##Steps to setup your own nightly builder
 
 1. Install the prerequisites.
 
-```
-sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib git lib32ncurses5-dev lib32z1-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip cmake libxml2-utils openjdk-7-jre openjdk-7-jdk
-```
+    ```
+    sudo apt-get install --no-install-recommends autoconf2.13 bison bzip2 ccache curl flex gawk gcc g++ g++-multilib gcc-4.6 g++-4.6 g++-4.6-multilib git lib32ncurses5-dev lib32z1-dev zlib1g:amd64 zlib1g-dev:amd64 zlib1g:i386 zlib1g-dev:i386 libgl1-mesa-dev libx11-dev make zip cmake libxml2-utils openjdk-7-jre openjdk-7-jdk
+    ```
 
 2. Clone the night builder files from github.
 
-```
-git clone https://github.com/diafygi/b2g_inari_nightly.git ~/b2g_inari_nightly
-```
+    ```
+    git clone https://github.com/diafygi/b2g_inari_nightly.git ~/b2g_inari_nightly
+    ```
 
 3. Clone the b2g repo from github.
 
-```
-git clone git://github.com/mozilla-b2g/B2G.git ~/B2G
-```
+    ```
+    git clone git://github.com/mozilla-b2g/B2G.git ~/B2G
+    ```
 
 4. Unzip the backup (needed for drivers) int the B2G folder.
 
-```
-unzip backup-inari.zip -d ~/B2G
-```
+    ```
+    unzip backup-inari.zip -d ~/B2G
+    ```
 
 5. Create the builds folder.
 
-```
-mkdir ~/builds
-```
+    ```
+    mkdir ~/builds
+    ```
 
 6. Create an entry in your cron (example below runs every morning at 1:00 a.m. local time).
 
-```
-0 1 * * * ~/b2g_inari_nightly/build_branches.sh &> /tmp/buildlog.log
-```
+    ```
+    0 1 * * * ~/b2g_inari_nightly/build_branches.sh &> /tmp/buildlog.log
+    ```
 
 7. Add a location to your web server to serve the files (I used nginx).
 
-```
-location /b2g_inari_builds {
-    alias /path/to/builds/;
-    autoindex on;
-}
-```
+    ```
+    location /b2g_inari_builds {
+        alias /path/to/builds/;
+        autoindex on;
+    }
+    ```
 
 ##Manually building
 
@@ -104,12 +104,12 @@ If you ever want to run the build script manually.
 
 2. Manually run the "build_branches.sh" script (I'd recommend running it in a screen (since it will take a while).
 
-```
-screen -S b2g
-~/b2g_inari_nightly/build_branches.sh
-<ctrl>+a d (detaches the screen)
-screen -r b2g (attaches the screen so you can check on the status)
-```
+    ```
+    screen -S b2g
+    ~/b2g_inari_nightly/build_branches.sh
+    <ctrl>+a d (detaches the screen)
+    screen -r b2g (attaches the screen so you can check on the status)
+    ```
 
 ##Support
 
