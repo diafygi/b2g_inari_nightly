@@ -35,7 +35,7 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
     adb devices
     ```
 
-6. Download one of the latest builds from https://daylightpirates.org/b2g_inari_builds/ (the three nightly build versions are master, v1.2, and v1.3).
+6. Download one of the latest builds from https://daylightpirates.org/b2g_inari_nightly_builds/ (the three nightly build versions are master, v1.2, and v1.3).
 
 7. Extract all the files to a b2g_inari directory.
 
