@@ -1,8 +1,18 @@
 #!/bin/bash
 
 #sync the repo
-cd ~/B2G && git pull
-cd ~/B2G && ./repo sync -d
+cd "${HOME}/B2G" && git pull
+cd "${HOME}/B2G" && ./repo sync -d
+
+#download the ZTE released update file with binary blobs
+if [ ! -d "${HOME}/B2G/backup-inari" ]
+then
+    wget "http://download.ztedevices.com/UpLoadFiles/product/643/3601/soft/2013121011161582.zip" -O "/tmp/update.zip"
+    unzip "/tmp/update.zip" -d "/tmp/update"
+    unzip "/tmp/update/US_DEV_FFOS_V1.0.0B02_USER_SD.zip" -d "${HOME}/B2G/backup-inari"
+    rm "/tmp/update.zip"
+    rm -r "/tmp/update"
+fi
 
 #loop through the desired nightly build branches
 b2gversions=( "master" "v1.2" "v1.3" )
@@ -36,5 +46,5 @@ do
     md5sum "${HOME}/builds/${BLD}.tar.gz" | awk '{ print $1 }' > "${HOME}/builds/${BLD}.md5"
     cp "${HOME}/builds/${BLD}.tar.gz" "${HOME}/builds/b2g_inari_${v}_latest.tar.gz"
     cp "${HOME}/builds/${BLD}.md5" "${HOME}/builds/b2g_inari_${v}_latest.md5"
-    find "${HOME}/builds/*" -mtime +14 | xargs rm
+    find "${HOME}/builds/" -mtime +14 | xargs rm
 done

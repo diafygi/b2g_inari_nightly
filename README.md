@@ -70,25 +70,19 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
     git clone git://github.com/mozilla-b2g/B2G.git ~/B2G
     ```
 
-4. Unzip the backup (needed for drivers) int the B2G folder.
-
-    ```
-    unzip ~/b2g_inari_nightly/backup-inari.zip -d ~/B2G
-    ```
-
-5. Create the builds folder.
+4. Create the builds folder.
 
     ```
     mkdir ~/builds
     ```
 
-6. Create an entry in your cron (example below runs every morning at 1:00 a.m. local time).
+5. Create an entry in your cron (example below runs every morning at 1:00 a.m. local time).
 
     ```
     0 1 * * * ~/b2g_inari_nightly/build_branches.sh &> /tmp/buildlog.log
     ```
 
-7. Add a location to your web server to serve the files (I used nginx).
+6. Add a location to your web server to serve the files (I used nginx).
 
     ```
     location /b2g_inari_nightly_builds {
