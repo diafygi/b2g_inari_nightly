@@ -16,7 +16,7 @@ I offer NO guarantee and NO warranty for these builds. They are purely experimen
 
 ##Steps to flash one of these builds to your ZTE Open (US version)
 
-1. Make sure your ZTE Open has [fastboot enabled](https://developer.mozilla.org/en-US/Firefox_OS/Developer_phone_guide/ZTE_OPEN#Revision_02). If you don't have fastboot enabled (or don't know if you do), follow my instructions [here](https://bugzilla.mozilla.org/show_bug.cgi?id=928659#c2).
+1. Make sure your ZTE Open has [fastboot enabled](https://developer.mozilla.org/en-US/Firefox_OS/Developer_phone_guide/ZTE_OPEN#Revision_02). If you don't have fastboot enabled (or don't know if you do), follow my instructions [here](https://bugzilla.mozilla.org/show_bug.cgi?id=928659#c2). **NOTE:** if you updated to ZTE's 1.1 release, FASTBOOT WILL BE DISABLED AGAIN. They [say](https://groups.google.com/d/msg/mozilla.dev.b2g/wz3MiQ4wZDI/xqnOfoidceEJ) they are working on another release that enables fastboot, but I haven't seen it yet.
 
 2. Install [adb and fastboot](https://developer.mozilla.org/en-US/Firefox_OS/Firefox_OS_build_prerequisites#Install_adb).
 
