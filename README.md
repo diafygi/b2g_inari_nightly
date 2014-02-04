@@ -1,6 +1,8 @@
-#Nightly Firefox OS builds for the ZTE Open (inari)
+#Nightly Firefox OS builds for the ZTE Open
 
-This is the code I'm using to build nightly versions of Firefox OS (Boot-2-Gecko, or b2g for short). I am building on a VPS with 3GB of RAM and Debian 7. I based these steps off of the official Firefox OS Build instructions: https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS
+**NOTE: [Bug #965180](https://bugzilla.mozilla.org/show_bug.cgi?id=965180) is currently preventing me from successfully building nightlies. Will update this script when that bug is resolved**
+
+This is the code I'm using to build nightly versions of Firefox OS (Boot-2-Gecko, or b2g for short) for the ZTE Open (config name: inari). I am building on a VPS with 3GB of RAM and Debian 7. I based these steps off of the official Firefox OS Build instructions: https://developer.mozilla.org/en-US/Firefox_OS/Building_and_installing_Firefox_OS
 
 The `build_branches.sh` and `README.md` is released under the GPLv2. The other files (`boot_adapted_for_zte_open_commercial_editions.img` and `backup-inari.zip`) are released under their owner's respective licenses.
 
@@ -12,7 +14,7 @@ https://daylightpirates.org/b2g_inari_nightly_builds/
 
 ##Disclaimer
 
-I offer NO guarantee and NO warranty for these builds. They are purely experimental and NOT official builds. If you brick your phone, it's your own damn fault. I have only tried several of these on the ZTE Open US version, so flashing them to the UK or other country versions may not work as well (I'm open to forks making UK-friendly builds). Also, flashing them to non-inari (ZTE Open's code name) devices will probably brick your phone (so don't do it).
+I offer NO guarantee and NO warranty for these builds. They are purely experimental and NOT official builds. If you brick your phone, it's your own damn fault. I have only tried several of these on the ZTE Open US version, so flashing them to the UK or other country versions may not work as well (I'm open to forks making UK-friendly builds). Also, flashing them to non-ZTE Open devices will probably brick your phone (so don't do it).
 
 ##Steps to flash one of these builds to your ZTE Open (US version)
 
